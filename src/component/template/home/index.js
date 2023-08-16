@@ -89,7 +89,8 @@ let Home = (props) => {
       </Row>
     </Container>
       </div> */}
-      <CardGroup>
+      <CardGroup>\
+      <Card></Card>
       <Card>
         <Card.Img variant="top" src={logo} />
         <Card.Body>
@@ -130,6 +131,7 @@ let Home = (props) => {
           <small className="text-muted">Last updated 3 mins ago</small>
         </Card.Footer>
       </Card>
+      <Card></Card>
     </CardGroup>
       
         </>

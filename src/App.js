@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import tes from './tes.png';
 import './App.css';
 import Home from './component/page/home';
+import Region from './component/page/region'
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         </a>
        
       </header> */}
-       <Home></Home>
+       {/* <Home></Home> */}
+       <Region></Region>
     </div>
   );
 }
