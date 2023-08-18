@@ -6,6 +6,7 @@ function Home(){
             labelHeader="This site is no longer updated."              
             labelGoto="Go to react.dev">
         </HomeTemplate>
+        
     )
 }
 

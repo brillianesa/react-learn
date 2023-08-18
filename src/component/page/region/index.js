@@ -38,7 +38,7 @@ let Region = () => {
             "name": name
         }
         axios({
-            method: editData ? "POST" : "POST", // Tetap menggunakan POST untuk keduanya
+            method: editData ? "POST" : "POST", 
             headers: {
               'Content-Type': 'application/json',
             },

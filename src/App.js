@@ -3,27 +3,28 @@ import tes from './tes.png';
 import './App.css';
 import Home from './component/page/home';
 import Region from './component/page/region'
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment, incrementByAmount } from './feature/counter/counterSlice';
 
 function App() {
+  const value = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
+
+  const handleIncrement = () => {
+    dispatch(increment());
+  }
+  const handleDecrement = () => {
+    dispatch(decrement());
+  }
+  const handleIncrementByAmount = (amount) => {
+    dispatch(incrementByAmount(amount));
+  }
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={tes} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-       
-      </header> */}
-       {/* <Home></Home> */}
-       <Region></Region>
+    <div>
+      <p>Counter Value: {value}</p>
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={() => handleIncrementByAmount(5)}>Increment by 5</button>
     </div>
   );
 }
