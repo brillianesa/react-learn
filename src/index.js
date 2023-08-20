@@ -3,14 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './component/page/home';
+
 import store from './handler/store';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './component/page/layout';
+import Home from './component/template/home';
+import NotFound from './component/page/errorPage/404';
+import Region from './component/page/region';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='region' element={<Region />} />
+            <Route path='*' element={<NotFound />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
   </Provider>
 );
 
